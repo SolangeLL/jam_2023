@@ -35,7 +35,7 @@ position = Vector2(397, 400)
 position = Vector2(52, 404)
 
 [node name="Player" parent="." instance=ExtResource("4_erhtk")]
-position = Vector2(87, 0)
+position = Vector2(93, 499)
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(-51, 686)
