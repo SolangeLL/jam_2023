@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://i8jlxvskds0a"]
 
-[ext_resource type="Texture2D" uid="uid://dobxij4uluhdv" path="res://assets/sprites/tilemap_packed.png" id="1_750mi"]
+[ext_resource type="Texture2D" uid="uid://cnnwhds127khl" path="res://assets/sprites/tilemap_packed.png" id="1_750mi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ah1a"]
 texture = ExtResource("1_750mi")
@@ -163,7 +163,6 @@ texture_region_size = Vector2i(18, 18)
 10:2/0 = 0
 10:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:2/0/physics_layer_0/angular_velocity = 0.0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
 11:2/0 = 0
 11:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:2/0/physics_layer_0/angular_velocity = 0.0
@@ -479,19 +478,15 @@ texture_region_size = Vector2i(18, 18)
 13:7/0 = 0
 13:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:7/0/physics_layer_0/angular_velocity = 0.0
-13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
 14:7/0 = 0
 14:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:7/0/physics_layer_0/angular_velocity = 0.0
-14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
 15:7/0 = 0
 15:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:7/0/physics_layer_0/angular_velocity = 0.0
-15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
 16:7/0 = 0
 16:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:7/0/physics_layer_0/angular_velocity = 0.0
-16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
 17:7/0 = 0
 17:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:7/0/physics_layer_0/angular_velocity = 0.0
@@ -568,6 +563,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6ah1a")
 
 [node name="TileMap" type="TileMap"]
+texture_filter = 1
 tile_set = SubResource("TileSet_2xbob")
 format = 2
 layer_0/name = "collision"
@@ -578,7 +574,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(1900568, 524288, 3, 2097179, 524288, 3, 2097187, 524288, 3, 2097210, 524288, 3, 2097212, 524288, 3, 2097213, 524288, 3)
+layer_1/tile_data = PackedInt32Array()
 layer_2/name = "winflag"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)

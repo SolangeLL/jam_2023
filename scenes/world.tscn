@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://j2plbavspgga"]
+[gd_scene load_steps=6 format=3 uid="uid://j2plbavspgga"]
 
-[ext_resource type="PackedScene" uid="uid://bbkrknfg15ufq" path="res://maps/lvl1.tscn" id="1_jrclq"]
+[ext_resource type="PackedScene" uid="uid://i8jlxvskds0a" path="res://maps/lvl1.tscn" id="1_jrclq"]
 [ext_resource type="PackedScene" uid="uid://bgl3wdvx1o03j" path="res://scenes/spike.tscn" id="2_yhb4k"]
 [ext_resource type="PackedScene" uid="uid://dc1gbsewpxod" path="res://scenes/falling_spike.tscn" id="3_jhs4d"]
+[ext_resource type="PackedScene" uid="uid://g7gwbvr4wxl7" path="res://scenes/Player.tscn" id="4_erhtk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50o3l"]
+size = Vector2(1405, 134)
 
 [node name="World" type="Node2D"]
 
 [node name="first_lvl" parent="." instance=ExtResource("1_jrclq")]
+layer_1/tile_data = PackedInt32Array(2097179, 524288, 3, 2097213, 524288, 3)
 
 [node name="Spike" parent="." instance=ExtResource("2_yhb4k")]
 position = Vector2(497, 584)
@@ -25,3 +30,18 @@ position = Vector2(1122, 584)
 
 [node name="FallingSpike2" parent="." instance=ExtResource("3_jhs4d")]
 position = Vector2(397, 400)
+
+[node name="Respawn" type="Marker2D" parent="."]
+position = Vector2(52, 404)
+
+[node name="Player" parent="." instance=ExtResource("4_erhtk")]
+position = Vector2(87, 0)
+
+[node name="DeathZone" type="Area2D" parent="."]
+position = Vector2(-51, 686)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(692.5, 57)
+shape = SubResource("RectangleShape2D_50o3l")
+
+[connection signal="body_entered" from="DeathZone" to="Spike" method="_on_death_zone_body_entered"]

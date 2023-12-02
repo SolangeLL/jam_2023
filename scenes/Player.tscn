@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://g7gwbvr4wxl7"]
+
+[ext_resource type="Texture2D" uid="uid://djsl825aikvmr" path="res://assets/sprites/mexican_mario.png" id="1_c6ir0"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_hlct5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy30t"]
+atlas = ExtResource("1_c6ir0")
+region = Rect2(141, 0, 141, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn0su"]
+atlas = ExtResource("1_c6ir0")
+region = Rect2(282, 0, 141, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gskqt"]
+atlas = ExtResource("1_c6ir0")
+region = Rect2(423, 0, 141, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixpiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy30t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn0su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gskqt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tavwq"]
+size = Vector2(13.75, 21.25)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_hlct5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ixpiw")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.125, -0.375)
+shape = SubResource("RectangleShape2D_tavwq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+texture_filter = 1
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
