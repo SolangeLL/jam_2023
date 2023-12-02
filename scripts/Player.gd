@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 100.0 
+@export var SPEED = 400.0 
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -19,6 +19,9 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_just_pressed("die"):
+		die()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -35,4 +38,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func die():
+	var respawn = get_parent().find_child("Respawn")
+	global_position = respawn.global_position
 	pass

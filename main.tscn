@@ -21,3 +21,6 @@ mesh = SubResource("QuadMesh_8momr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_mo882")
+
+[node name="Respawn" type="Marker2D" parent="."]
+position = Vector2(543, 64)
