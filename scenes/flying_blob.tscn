@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://hrvp5bmo4plk"]
+
+[ext_resource type="Script" path="res://scripts/flying_blob.gd" id="1_swtao"]
+[ext_resource type="Texture2D" uid="uid://c540r66t0er3k" path="res://assets/sprites/Tiles/Characters/tile_0026.png" id="2_1nl1n"]
+[ext_resource type="Texture2D" uid="uid://scmafkhhbrqd" path="res://assets/sprites/Tiles/Characters/tile_0024.png" id="3_e44ck"]
+[ext_resource type="Texture2D" uid="uid://c1hrujd60rtwn" path="res://assets/sprites/Tiles/Characters/tile_0025.png" id="4_8wulu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgi1r"]
+size = Vector2(32, 27)
+
+[sub_resource type="Animation" id="Animation_j7krv"]
+resource_name = "flying_anim"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_e44ck"), ExtResource("4_8wulu"), ExtResource("2_1nl1n")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4y14"]
+_data = {
+"flying_anim": SubResource("Animation_j7krv")
+}
+
+[node name="FlyingBlob" type="CharacterBody2D"]
+script = ExtResource("1_swtao")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.79336, 1.66267)
+texture = ExtResource("2_1nl1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_pgi1r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i4y14")
+}
