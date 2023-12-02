@@ -33,19 +33,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tavwq"]
-size = Vector2(128, 219)
+size = Vector2(13.75, 21.25)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_hlct5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_ixpiw")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0.5)
+position = Vector2(0.125, -0.375)
 shape = SubResource("RectangleShape2D_tavwq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+texture_filter = 1
+zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0

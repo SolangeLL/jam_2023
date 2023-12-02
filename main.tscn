@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ssbsbjhsq41o"]
+[gd_scene load_steps=4 format=3 uid="uid://ssbsbjhsq41o"]
 
 [ext_resource type="PackedScene" uid="uid://g7gwbvr4wxl7" path="res://scenes/Player.tscn" id="1_kxpec"]
-[ext_resource type="PackedScene" uid="uid://bxfjgd2qyw43i" path="res://scenes/test.tscn" id="2_ei71p"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_8momr"]
 size = Vector2(1000, 150)
@@ -26,7 +25,3 @@ shape = SubResource("RectangleShape2D_mo882")
 
 [node name="Respawn" type="Marker2D" parent="."]
 position = Vector2(543, 64)
-
-[node name="Background" parent="." instance=ExtResource("2_ei71p")]
-position = Vector2(-22, -469)
-cell_quadrant_size = 18
