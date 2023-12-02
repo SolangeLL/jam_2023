@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://j2plbavspgga"]
+
+[ext_resource type="PackedScene" uid="uid://bbkrknfg15ufq" path="res://maps/lvl1.tscn" id="1_jrclq"]
+[ext_resource type="PackedScene" uid="uid://bgl3wdvx1o03j" path="res://scenes/spike.tscn" id="2_yhb4k"]
+[ext_resource type="PackedScene" uid="uid://dc1gbsewpxod" path="res://scenes/falling_spike.tscn" id="3_jhs4d"]
+
+[node name="World" type="Node2D"]
+
+[node name="first_lvl" parent="." instance=ExtResource("1_jrclq")]
+
+[node name="Spike" parent="." instance=ExtResource("2_yhb4k")]
+position = Vector2(497, 584)
+
+[node name="FallingSpike" parent="." instance=ExtResource("3_jhs4d")]
+position = Vector2(377, 504)
+
+[node name="Spike2" parent="." instance=ExtResource("2_yhb4k")]
+position = Vector2(1059, 584)
+
+[node name="Spike3" parent="." instance=ExtResource("2_yhb4k")]
+position = Vector2(1102, 584)
+
+[node name="Spike4" parent="." instance=ExtResource("2_yhb4k")]
+position = Vector2(1122, 584)
+
+[node name="FallingSpike2" parent="." instance=ExtResource("3_jhs4d")]
+position = Vector2(397, 400)
