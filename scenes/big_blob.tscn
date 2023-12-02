@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dix852kurkwyd"]
+[gd_scene load_steps=7 format=3 uid="uid://r7sj1arqxooi"]
 
 [ext_resource type="Script" path="res://scripts/big_blob.gd" id="1_aj2w6"]
 [ext_resource type="Texture2D" uid="uid://und0iipor0ds" path="res://assets/sprites/Tiles/Characters/tile_0001.png" id="2_7ao1n"]
