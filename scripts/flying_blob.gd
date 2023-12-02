@@ -18,7 +18,6 @@ func _physics_process(delta):
 	animation.play("flying_anim")
 	
 	moving = moving + delta
-	print_debug(moving)
 	if moving > 3:
 		moving = 0
 		flip()
