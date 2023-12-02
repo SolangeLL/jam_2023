@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 
 @export var SPEED = 100.0 
-const JUMP_VELOCITY = -400.0
+@export var coins = 0
+const JUMP_VELOCITY = -350.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	$AnimatedSprite2D.play("walk")
-
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -41,3 +41,4 @@ func die():
 	var respawn = get_parent().find_child("Respawn")
 	global_position = respawn.global_position
 	pass
+	

@@ -51,4 +51,3 @@ shape = SubResource("RectangleShape2D_tavwq")
 texture_filter = 1
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
