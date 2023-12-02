@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://e68cwuhk0j1c"]
 
-[ext_resource type="Script" path="res://scenes/plante_cul.gd" id="1_t0tc2"]
+[ext_resource type="Script" path="res://scripts/plante_cul.gd" id="1_ncww6"]
 [ext_resource type="Texture2D" uid="uid://bqm4jimawlpat" path="res://assets/sprites/Tiles/Characters/tile_0015.png" id="2_8e8kb"]
 [ext_resource type="Texture2D" uid="uid://yjefc2pn14ug" path="res://assets/sprites/Tiles/Characters/tile_0016.png" id="3_apglp"]
 [ext_resource type="Texture2D" uid="uid://bd2q8hf1hnw31" path="res://assets/sprites/Tiles/Characters/tile_0017.png" id="4_cbck5"]
@@ -30,7 +30,7 @@ _data = {
 }
 
 [node name="PlanteCul" type="CharacterBody2D"]
-script = ExtResource("1_t0tc2")
+script = ExtResource("1_ncww6")
 SPEED = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
