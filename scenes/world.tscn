@@ -174,10 +174,10 @@ position = Vector2(531, 354)
 position = Vector2(513, 354)
 
 [node name="Respawn" type="Marker2D" parent="."]
-position = Vector2(61, 575)
+position = Vector2(117, 574)
 
 [node name="Player" parent="." instance=ExtResource("4_erhtk")]
-position = Vector2(62, 581)
+position = Vector2(117, 573)
 
 [node name="FlyingBlob" parent="." instance=ExtResource("6_ojccx")]
 position = Vector2(985, 529)

@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 @export var SPEED = 100.0
 @export var coins = 0
-@export var tacos = false
 var can_move = true
 var on_ground = true
 var is_moving = false
