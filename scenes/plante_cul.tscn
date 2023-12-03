@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://e68cwuhk0j1c"]
+[gd_scene load_steps=8 format=3 uid="uid://cpg2lygi07y4t"]
 
 [ext_resource type="Script" path="res://scripts/plante_cul.gd" id="1_ncww6"]
 [ext_resource type="Texture2D" uid="uid://bqm4jimawlpat" path="res://assets/sprites/Tiles/Characters/tile_0015.png" id="2_8e8kb"]

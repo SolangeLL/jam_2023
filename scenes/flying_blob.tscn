@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hrvp5bmo4plk"]
+[gd_scene load_steps=8 format=3 uid="uid://cvdav0ys3vwpp"]
 
 [ext_resource type="Script" path="res://scripts/flying_blob.gd" id="1_swtao"]
 [ext_resource type="Texture2D" uid="uid://c540r66t0er3k" path="res://assets/sprites/Tiles/Characters/tile_0026.png" id="2_1nl1n"]
