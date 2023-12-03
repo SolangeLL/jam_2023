@@ -20,10 +20,10 @@ size = Vector2(1405, 134)
 size = Vector2(69, 659)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_algwj"]
-size = Vector2(539, 14)
+size = Vector2(883.5, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfl60"]
-size = Vector2(179.5, 12.5)
+size = Vector2(200.75, 11.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq5e7"]
 size = Vector2(125, 5.5)
@@ -225,12 +225,12 @@ debug_color = Color(0.933382, 0.247585, 0.192842, 0.42)
 [node name="GrassType" type="Area2D" parent="." groups=["grass"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassType"]
-position = Vector2(271, 598)
+position = Vector2(98.75, 600)
 shape = SubResource("RectangleShape2D_algwj")
 debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GrassType"]
-position = Vector2(703, 598)
+position = Vector2(692.375, 598.625)
 shape = SubResource("RectangleShape2D_lfl60")
 debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
 
