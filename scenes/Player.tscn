@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://g7gwbvr4wxl7"]
+[gd_scene load_steps=53 format=3 uid="uid://g7gwbvr4wxl7"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_hlct5"]
 [ext_resource type="Texture2D" uid="uid://c0tupqufka5w1" path="res://assets/sprites/player/death/Hobbit - death1.png" id="2_6vp3l"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://8delp35lbgb7" path="res://assets/sprites/player/stop/Hobbit - stop8.png" id="45_jkgl6"]
 [ext_resource type="AudioStream" uid="uid://crngdtq73tmyq" path="res://assets/sounds/jump.ogg" id="46_38a3b"]
 [ext_resource type="AudioStream" uid="uid://nl1e3bae4lbu" path="res://assets/sounds/jumpland.ogg" id="47_r4jl1"]
+[ext_resource type="PackedScene" uid="uid://bxjvg4pajqh37" path="res://scenes/HUD.tscn" id="49_5u4j7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ixpiw"]
 animations = [{
@@ -246,7 +247,9 @@ shape = SubResource("RectangleShape2D_tavwq")
 texture_filter = 1
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
+position_smoothing_speed = 3.0
+
+[node name="HUD" parent="Camera2D" instance=ExtResource("49_5u4j7")]
 
 [node name="DetectTypeZone" type="Area2D" parent="."]
 
