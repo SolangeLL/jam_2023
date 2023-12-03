@@ -46,17 +46,6 @@ size = Vector2(73, 11)
 
 [node name="World" type="Node2D"]
 
-[node name="Pause_menu" parent="." instance=ExtResource("1_yg65t")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -230.0
-offset_top = 355.0
-offset_right = -230.0
-offset_bottom = 355.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="first_lvl" parent="." instance=ExtResource("2_7i722")]
 
 [node name="Traps" type="Node2D" parent="."]
@@ -200,6 +189,17 @@ position = Vector2(217, 580)
 [node name="BigBlob" parent="Enemies" instance=ExtResource("9_0eb1d")]
 position = Vector2(84, 301)
 
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("13_gcmae")]
+position = Vector2(638, 580)
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("13_gcmae")]
+position = Vector2(401, 327)
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("13_gcmae")]
+position = Vector2(403, 111)
+
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(-51, 686)
 
@@ -278,15 +278,15 @@ autoplay = true
 [node name="Tacos" parent="." instance=ExtResource("12_fy3ye")]
 position = Vector2(1046, 150)
 
-[node name="Checkpoints" type="Node2D" parent="."]
-
-[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("13_gcmae")]
-position = Vector2(638, 580)
-
-[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("13_gcmae")]
-position = Vector2(401, 327)
-
-[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("13_gcmae")]
-position = Vector2(403, 111)
+[node name="Pause_menu" parent="." instance=ExtResource("1_yg65t")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -230.0
+offset_top = 355.0
+offset_right = -230.0
+offset_bottom = 355.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="body_entered" from="DeathZone" to="Traps/Spike" method="_on_death_zone_body_entered"]
