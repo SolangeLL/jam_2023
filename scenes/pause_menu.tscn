@@ -270,5 +270,7 @@ size_flags_vertical = 6
 [connection signal="pressed" from="Options/VBoxContainer/ButtonVideo" to="." method="_on_button_video_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/ButtonAudio" to="." method="_on_button_audio_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/BorderLess" to="." method="_on_border_less_toggled"]
 [connection signal="pressed" from="Video/ButtonBackVideo" to="." method="_on_button_back_video_pressed"]
 [connection signal="pressed" from="Audio/ButtonBackAudio" to="." method="_on_button_back_audio_pressed"]
