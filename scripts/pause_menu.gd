@@ -87,4 +87,3 @@ func _on_music_value_changed(value):
 
 func volume(bus_index, value):
 	AudioServer.set_bus_volume_db(bus_index, value)
-
