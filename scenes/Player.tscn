@@ -1,8 +1,9 @@
-[gd_scene load_steps=51 format=3 uid="uid://g7gwbvr4wxl7"]
+[gd_scene load_steps=52 format=3 uid="uid://g7gwbvr4wxl7"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_hlct5"]
 [ext_resource type="Texture2D" uid="uid://c0tupqufka5w1" path="res://assets/sprites/player/death/Hobbit - death1.png" id="2_6vp3l"]
 [ext_resource type="Texture2D" uid="uid://b1jocdk3bewf8" path="res://assets/sprites/player/death/Hobbit - death2.png" id="3_aaf1k"]
+[ext_resource type="AudioStream" uid="uid://cx6eb6ckbeik" path="res://assets/sounds/death.ogg" id="4_1l1p0"]
 [ext_resource type="Texture2D" uid="uid://dln8lmqtns67u" path="res://assets/sprites/player/death/Hobbit - death3.png" id="4_d6r18"]
 [ext_resource type="Texture2D" uid="uid://7x5y5xmruid" path="res://assets/sprites/player/death/Hobbit - death4.png" id="5_nigq4"]
 [ext_resource type="Texture2D" uid="uid://7gbfkq10sbui" path="res://assets/sprites/player/death/Hobbit - death5.png" id="6_otv55"]
@@ -212,7 +213,7 @@ animations = [{
 size = Vector2(23, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lak7e"]
-size = Vector2(12, 2)
+size = Vector2(13, 3)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_hlct5")
@@ -226,6 +227,9 @@ stream = ExtResource("46_38a3b")
 stream = ExtResource("47_r4jl1")
 
 [node name="WalkSound" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("4_1l1p0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -246,7 +250,7 @@ position_smoothing_speed = 2.0
 [node name="DetectTypeZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectTypeZone"]
-position = Vector2(0, 8)
+position = Vector2(-0.5, 7.5)
 shape = SubResource("RectangleShape2D_lak7e")
 debug_color = Color(0.819608, 0.403922, 0.00784314, 0.419608)
 
