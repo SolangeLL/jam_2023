@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7h42mjq8mccq"]
 
 [ext_resource type="Texture2D" uid="uid://cq67vg6itpex6" path="res://assets/sprites/Tiles/tile_0000.png" id="1_v43ql"]
-[ext_resource type="PackedScene" uid="uid://caq8mk4kjtyqj" path="res://scenes/blob.tscn" id="2_tcq0c"]
-[ext_resource type="PackedScene" uid="uid://dix852kurkwyd" path="res://scenes/big_blob.tscn" id="3_u0lid"]
-[ext_resource type="PackedScene" uid="uid://hrvp5bmo4plk" path="res://scenes/flying_blob.tscn" id="4_vton1"]
+[ext_resource type="PackedScene" uid="uid://ci5yu6rsf56xy" path="res://scenes/enemies/blob.tscn" id="2_tcq0c"]
+[ext_resource type="PackedScene" uid="uid://r7sj1arqxooi" path="res://scenes/enemies/big_blob.tscn" id="3_u0lid"]
+[ext_resource type="PackedScene" uid="uid://cvdav0ys3vwpp" path="res://scenes/enemies/flying_blob.tscn" id="4_vton1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mao8s"]
 size = Vector2(14, 15)

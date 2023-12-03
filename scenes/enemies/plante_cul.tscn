@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpg2lygi07y4t"]
+
+[ext_resource type="Script" path="res://scripts/plante_cul.gd" id="1_ncww6"]
+[ext_resource type="Texture2D" uid="uid://bqm4jimawlpat" path="res://assets/sprites/Tiles/Characters/tile_0015.png" id="2_8e8kb"]
+[ext_resource type="Texture2D" uid="uid://yjefc2pn14ug" path="res://assets/sprites/Tiles/Characters/tile_0016.png" id="3_apglp"]
+[ext_resource type="Texture2D" uid="uid://bd2q8hf1hnw31" path="res://assets/sprites/Tiles/Characters/tile_0017.png" id="4_cbck5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxv3u"]
+size = Vector2(20, 5)
+
+[sub_resource type="Animation" id="Animation_b874r"]
+resource_name = "plante_cul"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_8e8kb"), ExtResource("3_apglp"), ExtResource("4_cbck5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c6171"]
+_data = {
+"plante_cul": SubResource("Animation_b874r")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u72rx"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1v7a"]
+size = Vector2(20, 201)
+
+[node name="PlanteCul" type="CharacterBody2D"]
+script = ExtResource("1_ncww6")
+SPEED = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_oxv3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_8e8kb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c6171")
+}
+
+[node name="MoveCast" type="RayCast2D" parent="."]
+position = Vector2(-11, 1)
+target_position = Vector2(0, 15)
+
+[node name="JumpCast" type="RayCast2D" parent="."]
+target_position = Vector2(0, -49)
+
+[node name="KillArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_u72rx")
+
+[node name="JumpArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea"]
+position = Vector2(0, -90.5)
+shape = SubResource("RectangleShape2D_a1v7a")
+
+[connection signal="body_shape_entered" from="KillArea" to="." method="_on_kill_area_body_shape_entered"]
+[connection signal="body_shape_entered" from="JumpArea" to="." method="_on_jump_area_body_shape_entered"]

@@ -9,7 +9,7 @@ func _ready():
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		_is_paused = !_is_paused
-		global_position = get_parent().get_node("Player").get_node("Camera2D").position
+		global_position = get_parent().get_node("Player").get_node("Camera2D").global_position
 
 func set_paused(value:bool) -> void:
 	_is_paused = value
