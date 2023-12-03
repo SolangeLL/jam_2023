@@ -1,15 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://csv0hk1c0vy8v"]
+[gd_scene load_steps=3 format=3 uid="uid://csv0hk1c0vy8v"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_0arhq"]
 [ext_resource type="FontFile" uid="uid://gb78p20k3sh0" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_bbmxg"]
-[ext_resource type="Texture2D" uid="uid://d42nfi0w0hdt" path="res://assets/UI/white_square_0.png" id="3_71fn2"]
-[ext_resource type="Texture2D" uid="uid://71tsbskoj22n" path="res://assets/UI/white_pressed_square_1.png" id="4_fps4i"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qhwy"]
-texture = ExtResource("3_71fn2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57075"]
-texture = ExtResource("4_fps4i")
 
 [node name="Pause_menu" type="Control"]
 process_mode = 3
@@ -175,8 +167,6 @@ layout_mode = 2
 [node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
 layout_mode = 2
 size_flags_vertical = 7
-theme_override_styles/normal = SubResource("StyleBoxTexture_8qhwy")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_57075")
 
 [node name="BorderLess" type="CheckBox" parent="Video/HBoxContainer/Checks"]
 layout_mode = 2
