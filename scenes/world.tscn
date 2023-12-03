@@ -1,11 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://j2plbavspgga"]
+[gd_scene load_steps=21 format=3 uid="uid://j2plbavspgga"]
 
+[ext_resource type="PackedScene" uid="uid://csv0hk1c0vy8v" path="res://scenes/pause_menu.tscn" id="1_feec3"]
 [ext_resource type="PackedScene" uid="uid://i8jlxvskds0a" path="res://maps/lvl1.tscn" id="1_jrclq"]
 [ext_resource type="PackedScene" uid="uid://bgl3wdvx1o03j" path="res://scenes/spike.tscn" id="2_yhb4k"]
 [ext_resource type="PackedScene" uid="uid://dc1gbsewpxod" path="res://scenes/falling_spike.tscn" id="3_jhs4d"]
 [ext_resource type="PackedScene" uid="uid://g7gwbvr4wxl7" path="res://scenes/Player.tscn" id="4_erhtk"]
 [ext_resource type="PackedScene" uid="uid://lxj3rwib25p8" path="res://scenes/coin.tscn" id="5_yhdnf"]
 [ext_resource type="PackedScene" uid="uid://cvdav0ys3vwpp" path="res://scenes/flying_blob.tscn" id="6_ojccx"]
+[ext_resource type="AudioStream" uid="uid://dc7l4pe87klex" path="res://assets/sounds/cumbia-mexican-banda-2716.mp3" id="8_mmrht"]
+[ext_resource type="PackedScene" uid="uid://cpg2lygi07y4t" path="res://scenes/plante_cul.tscn" id="9_vwk3g"]
+[ext_resource type="PackedScene" uid="uid://r7sj1arqxooi" path="res://scenes/big_blob.tscn" id="10_1w7gf"]
+[ext_resource type="PackedScene" uid="uid://ci5yu6rsf56xy" path="res://scenes/blob.tscn" id="10_clksv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50o3l"]
 size = Vector2(1405, 134)
@@ -17,37 +22,105 @@ size = Vector2(539, 14)
 size = Vector2(179.5, 12.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq5e7"]
-size = Vector2(127.25, 5)
+size = Vector2(125, 5.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b1qu"]
 size = Vector2(56.125, 10.125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sws6"]
+size = Vector2(62, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cgsp"]
+size = Vector2(110, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rstdk"]
+size = Vector2(212, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a51tn"]
+size = Vector2(73, 11)
+
 [node name="World" type="Node2D"]
+
+[node name="Pause_menu" parent="." instance=ExtResource("1_feec3")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -56.0
+offset_top = 372.0
+offset_right = -56.0
+offset_bottom = 372.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="first_lvl" parent="." instance=ExtResource("1_jrclq")]
 
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="Spike" parent="Traps" instance=ExtResource("2_yhb4k")]
-position = Vector2(497, 584)
+position = Vector2(497, 585)
 
 [node name="FallingSpike" parent="Traps" instance=ExtResource("3_jhs4d")]
 position = Vector2(377, 504)
 
 [node name="Spike2" parent="Traps" instance=ExtResource("2_yhb4k")]
-position = Vector2(1059, 584)
+position = Vector2(1062, 584)
 
 [node name="Spike3" parent="Traps" instance=ExtResource("2_yhb4k")]
-position = Vector2(1102, 584)
+position = Vector2(1112, 584)
 
 [node name="Spike4" parent="Traps" instance=ExtResource("2_yhb4k")]
-position = Vector2(1122, 584)
+position = Vector2(1138, 584)
 
 [node name="FallingSpike2" parent="Traps" instance=ExtResource("3_jhs4d")]
 position = Vector2(397, 400)
 
 [node name="FallingSpike3" parent="Traps" instance=ExtResource("3_jhs4d")]
 position = Vector2(945, 430)
+
+[node name="Spike5" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(1086, 584)
+
+[node name="Spike6" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(1038, 584)
+
+[node name="Spike7" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(439, 530)
+
+[node name="Spike8" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(855, 314)
+
+[node name="Spike9" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(380, 332)
+
+[node name="FallingSpike4" parent="Traps" instance=ExtResource("3_jhs4d")]
+position = Vector2(356, 195)
+
+[node name="Spike10" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(232, 314)
+
+[node name="Spike18" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(255, 314)
+
+[node name="Spike11" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(209, 314)
+
+[node name="Spike12" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(186, 314)
+
+[node name="Spike13" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(163, 314)
+
+[node name="Spike14" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(140, 314)
+
+[node name="Spike15" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(117, 314)
+
+[node name="Spike16" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(94, 314)
+
+[node name="Spike17" parent="Traps" instance=ExtResource("2_yhb4k")]
+position = Vector2(71, 314)
 
 [node name="Coins" type="Node2D" parent="."]
 
@@ -57,17 +130,41 @@ position = Vector2(710, 585)
 [node name="Coin2" parent="Coins" instance=ExtResource("5_yhdnf")]
 position = Vector2(820, 531)
 
+[node name="Coin12" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(387, 119)
+
 [node name="Coin3" parent="Coins" instance=ExtResource("5_yhdnf")]
 position = Vector2(400, 477)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(243, 314)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(173, 314)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(105, 314)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("5_yhdnf")]
 position = Vector2(376, 532)
 
+[node name="Coin5" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(567, 354)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(549, 354)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(531, 354)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(513, 354)
+
 [node name="Respawn" type="Marker2D" parent="."]
-position = Vector2(52, 404)
+position = Vector2(61, 575)
 
 [node name="Player" parent="." instance=ExtResource("4_erhtk")]
-position = Vector2(93, 499)
+position = Vector2(62, 581)
 
 [node name="FlyingBlob" parent="." instance=ExtResource("6_ojccx")]
 position = Vector2(985, 529)
@@ -81,27 +178,67 @@ shape = SubResource("RectangleShape2D_50o3l")
 debug_color = Color(0.945098, 0.192157, 0, 0.419608)
 
 [node name="GrassType" type="Area2D" parent="." groups=["grass"]]
-visible = false
-position = Vector2(3, 586)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassType"]
-position = Vector2(264.5, 15)
+position = Vector2(271, 598)
 shape = SubResource("RectangleShape2D_algwj")
 debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GrassType"]
-position = Vector2(698.25, 14.75)
+position = Vector2(703, 598)
 shape = SubResource("RectangleShape2D_lfl60")
 debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
+
+[node name="FlyingBlob2" parent="." instance=ExtResource("6_ojccx")]
+position = Vector2(899, 430)
+
+[node name="FlyingBlob3" parent="." instance=ExtResource("6_ojccx")]
+position = Vector2(364, 166)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_mmrht")
+autoplay = true
+
+[node name="PlanteCul" parent="." instance=ExtResource("9_vwk3g")]
+position = Vector2(652, 383)
+
+[node name="PlanteCul2" parent="." instance=ExtResource("9_vwk3g")]
+position = Vector2(554, 237)
+
+[node name="Blob" parent="." instance=ExtResource("10_clksv")]
+position = Vector2(217, 580)
+
+[node name="BigBlob" parent="." instance=ExtResource("10_1w7gf")]
+position = Vector2(84, 301)
 
 [node name="WoodType" type="Area2D" parent="." groups=["wood"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WoodType"]
-position = Vector2(387, 541)
+position = Vector2(386.5, 541.25)
 shape = SubResource("RectangleShape2D_aq5e7")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="WoodType"]
 position = Vector2(386.938, 489.938)
 shape = SubResource("RectangleShape2D_6b1qu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WoodType"]
+position = Vector2(640, 398)
+shape = SubResource("RectangleShape2D_3sws6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WoodType"]
+position = Vector2(379, 345)
+shape = SubResource("RectangleShape2D_5cgsp")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="WoodType"]
+position = Vector2(1009, 163)
+shape = SubResource("RectangleShape2D_5cgsp")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="WoodType"]
+position = Vector2(163, 324.5)
+shape = SubResource("RectangleShape2D_rstdk")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="WoodType"]
+position = Vector2(539.5, 253.5)
+shape = SubResource("RectangleShape2D_a51tn")
 
 [connection signal="body_entered" from="DeathZone" to="Traps/Spike" method="_on_death_zone_body_entered"]

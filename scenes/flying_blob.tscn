@@ -37,7 +37,9 @@ texture_filter = 1
 scale = Vector2(1.79336, 1.66267)
 texture = ExtResource("2_1nl1n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_pgi1r")
 
@@ -45,3 +47,5 @@ shape = SubResource("RectangleShape2D_pgi1r")
 libraries = {
 "": SubResource("AnimationLibrary_i4y14")
 }
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
