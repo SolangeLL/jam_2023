@@ -173,14 +173,31 @@ position = Vector2(531, 354)
 [node name="Coin8" parent="Coins" instance=ExtResource("5_yhdnf")]
 position = Vector2(513, 354)
 
-[node name="Respawn" type="Marker2D" parent="."]
-position = Vector2(117, 574)
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("4_erhtk")]
-position = Vector2(117, 573)
-
-[node name="FlyingBlob" parent="." instance=ExtResource("6_ojccx")]
+[node name="FlyingBlob" parent="Enemies" instance=ExtResource("6_ojccx")]
 position = Vector2(985, 529)
+
+[node name="FlyingBlob2" parent="Enemies" instance=ExtResource("6_ojccx")]
+position = Vector2(899, 430)
+
+[node name="FlyingBlob4" parent="Enemies" instance=ExtResource("6_ojccx")]
+position = Vector2(807, 153)
+
+[node name="FlyingBlob3" parent="Enemies" instance=ExtResource("6_ojccx")]
+position = Vector2(364, 166)
+
+[node name="PlanteCul" parent="Enemies" instance=ExtResource("9_vwk3g")]
+position = Vector2(652, 383)
+
+[node name="PlanteCul2" parent="Enemies" instance=ExtResource("9_vwk3g")]
+position = Vector2(554, 237)
+
+[node name="Blob" parent="Enemies" instance=ExtResource("10_clksv")]
+position = Vector2(217, 580)
+
+[node name="BigBlob" parent="Enemies" instance=ExtResource("10_1w7gf")]
+position = Vector2(84, 301)
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(-51, 686)
@@ -217,31 +234,6 @@ position = Vector2(703, 598)
 shape = SubResource("RectangleShape2D_lfl60")
 debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
 
-[node name="FlyingBlob2" parent="." instance=ExtResource("6_ojccx")]
-position = Vector2(899, 430)
-
-[node name="FlyingBlob4" parent="." instance=ExtResource("6_ojccx")]
-position = Vector2(807, 153)
-
-[node name="FlyingBlob3" parent="." instance=ExtResource("6_ojccx")]
-position = Vector2(364, 166)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_mmrht")
-autoplay = true
-
-[node name="PlanteCul" parent="." instance=ExtResource("9_vwk3g")]
-position = Vector2(652, 383)
-
-[node name="PlanteCul2" parent="." instance=ExtResource("9_vwk3g")]
-position = Vector2(554, 237)
-
-[node name="Blob" parent="." instance=ExtResource("10_clksv")]
-position = Vector2(217, 580)
-
-[node name="BigBlob" parent="." instance=ExtResource("10_1w7gf")]
-position = Vector2(84, 301)
-
 [node name="WoodType" type="Area2D" parent="." groups=["wood"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WoodType"]
@@ -271,6 +263,16 @@ shape = SubResource("RectangleShape2D_rstdk")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="WoodType"]
 position = Vector2(539.5, 253.5)
 shape = SubResource("RectangleShape2D_a51tn")
+
+[node name="Respawn" type="Marker2D" parent="."]
+position = Vector2(117, 536)
+
+[node name="Player" parent="." instance=ExtResource("4_erhtk")]
+position = Vector2(117, 534)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_mmrht")
+autoplay = true
 
 [node name="Tacos" parent="." instance=ExtResource("12_qkfqs")]
 position = Vector2(1046, 150)
