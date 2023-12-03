@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bl7hdjfrer3be"]
 
 [ext_resource type="Texture2D" uid="uid://cravvqasslgty" path="res://assets/sprites/png-transparent-taco-pixel-art-pixel-2-pixel-art-rectangle-taco-area-removebg-preview.png" id="1_0cq37"]
-[ext_resource type="Script" path="res://scenes/tacos.gd" id="1_r53y6"]
+[ext_resource type="Script" path="res://scripts/tacos.gd" id="1_r53y6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1h1ge"]
 size = Vector2(17, 10)

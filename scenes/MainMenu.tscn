@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://duq48l4yg7duf"]
 
-[ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_6ow2b"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_6ow2b"]
 [ext_resource type="Texture2D" uid="uid://b0eu4dbh82agx" path="res://assets/sprites/taco-background-pai73b68gyw9tgl8.jpg" id="1_25j00"]
 [ext_resource type="FontFile" uid="uid://gb78p20k3sh0" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_tviya"]
 [ext_resource type="AudioStream" uid="uid://dc7l4pe87klex" path="res://assets/sounds/cumbia-mexican-banda-2716.mp3" id="4_pcptd"]
