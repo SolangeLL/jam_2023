@@ -78,3 +78,13 @@ func _on_v_sync_toggled(button_pressed):
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+#sound
+func _on_master_value_changed(value):
+	volume(0, value)
+
+func _on_music_value_changed(value):
+	pass #volume(buf_index, value).
+
+func volume(bus_index, value):
+	AudioServer.set_bus_volume_db(bus_index, value)
+

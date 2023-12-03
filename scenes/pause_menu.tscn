@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2rat1b8icpo2"]
+[gd_scene load_steps=3 format=3 uid="uid://csv0hk1c0vy8v"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_0arhq"]
 [ext_resource type="FontFile" uid="uid://gb78p20k3sh0" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_bbmxg"]
@@ -274,3 +274,5 @@ size_flags_vertical = 6
 [connection signal="toggled" from="Video/HBoxContainer/Checks/BorderLess" to="." method="_on_border_less_toggled"]
 [connection signal="pressed" from="Video/ButtonBackVideo" to="." method="_on_button_back_video_pressed"]
 [connection signal="pressed" from="Audio/ButtonBackAudio" to="." method="_on_button_back_audio_pressed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/Music" to="." method="_on_music_value_changed"]
