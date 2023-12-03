@@ -116,7 +116,10 @@ func die():
 	pass
 
 func respawn():
-	$AnimatedSprite2D.play("idle")
+	if is_moving:
+		$AnimatedSprite2D.play("run")
+	else:
+		$AnimatedSprite2D.play("idle")
 	var respawn_node = get_parent().find_child("Respawn")
 	global_position = respawn_node.global_position
 	can_move = true

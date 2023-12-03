@@ -20,5 +20,5 @@ func update_coins_text(value : int):
 
 func update_death_text(value : int):
 	$Deaths/DeathText.text = str(value)
-	if value > 10:
+	if value > 30:
 		$Deaths/DeathImage.modulate = Color(255, 0, 0)
