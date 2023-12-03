@@ -6,16 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dc1gbsewpxod" path="res://scenes/falling_spike.tscn" id="3_jhs4d"]
 [ext_resource type="PackedScene" uid="uid://g7gwbvr4wxl7" path="res://scenes/Player.tscn" id="4_erhtk"]
 [ext_resource type="PackedScene" uid="uid://lxj3rwib25p8" path="res://scenes/coin.tscn" id="5_yhdnf"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://hrvp5bmo4plk" path="res://scenes/flying_blob.tscn" id="6_ojccx"]
-=======
 [ext_resource type="PackedScene" uid="uid://cvdav0ys3vwpp" path="res://scenes/flying_blob.tscn" id="6_ojccx"]
 [ext_resource type="AudioStream" uid="uid://dc7l4pe87klex" path="res://assets/sounds/cumbia-mexican-banda-2716.mp3" id="8_mmrht"]
 [ext_resource type="PackedScene" uid="uid://cpg2lygi07y4t" path="res://scenes/plante_cul.tscn" id="9_vwk3g"]
 [ext_resource type="PackedScene" uid="uid://r7sj1arqxooi" path="res://scenes/big_blob.tscn" id="10_1w7gf"]
 [ext_resource type="PackedScene" uid="uid://ci5yu6rsf56xy" path="res://scenes/blob.tscn" id="10_clksv"]
 [ext_resource type="PackedScene" uid="uid://bl7hdjfrer3be" path="res://scenes/tacos.tscn" id="12_qkfqs"]
->>>>>>> 4bac96ec49dbf6e39dcff844557feaca826a1acc
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50o3l"]
 size = Vector2(1405, 134)
