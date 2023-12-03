@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @export var SPEED = -2.0
 @export var newspeed = -20.0
-@export var JUMP_VELOCITY = -400.0
+@export var JUMP_VELOCITY = -800.0
 
 var facing_right = false
 
@@ -26,6 +26,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+		
 func flip():
 	facing_right = !facing_right
 	
@@ -38,3 +39,13 @@ func flip():
 
 func jump():
 	velocity.y = JUMP_VELOCITY
+
+
+func _on_jump_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("player"):
+		jump()
+
+
+func _on_kill_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("player"):
+		body.die()

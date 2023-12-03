@@ -46,7 +46,7 @@ func _physics_process(delta):
 	check_is_landing()
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and can_move:
 		$AnimatedSprite2D.play("jump")
 		jump_sound.play()
 		velocity.y = JUMP_VELOCITY
@@ -62,6 +62,7 @@ func check_is_landing():
 			if is_moving:
 				walk_sound.play()
 	
+
 
 func check_type_ground():
 	if detect_type_ground.get_overlapping_areas().size() > 0:

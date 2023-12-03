@@ -9,7 +9,9 @@ var moving = 0
 var facing_right = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-
+func _on_area_2d_body_entered(body: Node2D):
+	if body.is_in_group("player"):
+		body.die()
 
 func _physics_process(delta):
 	# Add the gravity.

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
-@export var SPEED = -80.0
+@export var SPEED = -100.0
 @export var JUMP_VELOCITY = -400.0
 
 var facing_right = false
@@ -31,3 +31,8 @@ func flip():
 		SPEED = abs(SPEED)
 	else:
 		SPEED = abs(SPEED) * -1
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):
+		body.die()
