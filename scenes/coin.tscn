@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://lxj3rwib25p8"]
+[gd_scene load_steps=8 format=3 uid="uid://lxj3rwib25p8"]
 
-[ext_resource type="Script" path="res://scenes/coin.gd" id="1_7sci3"]
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_oh17g"]
 [ext_resource type="Texture2D" uid="uid://yebbaomkgsj5" path="res://assets/sprites/Tiles/tile_0151.png" id="1_y5uas"]
 [ext_resource type="Texture2D" uid="uid://ck7ckugmr58f6" path="res://assets/sprites/Tiles/tile_0152.png" id="2_skn4m"]
+[ext_resource type="AudioStream" uid="uid://cvrxgdutnn4l2" path="res://assets/sounds/coin.ogg" id="4_jxoee"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n5fom"]
 radius = 7.07107
@@ -29,9 +30,10 @@ _data = {
 }
 
 [node name="Coin" type="Node2D"]
-script = ExtResource("1_7sci3")
+script = ExtResource("1_oh17g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_y5uas")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -45,4 +47,8 @@ libraries = {
 "": SubResource("AnimationLibrary_i8mmd")
 }
 
+[node name="PickUpCoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jxoee")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="PickUpCoinSound" to="." method="_on_pick_up_coin_sound_finished"]
