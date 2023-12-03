@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2rat1b8icpo2"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_0arhq"]
+[ext_resource type="FontFile" uid="uid://gb78p20k3sh0" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_bbmxg"]
+
+[node name="Pause_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0arhq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219608, 0.219608, 0.219608, 0.639216)
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -84.0
+offset_right = 83.5
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 8
+
+[node name="Label" type="Label" parent="ColorRect/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_bbmxg")
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonResume" type="Button" parent="ColorRect/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_bbmxg")
+text = "Resume
+"
+
+[node name="ButtonOptions" type="Button" parent="ColorRect/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_bbmxg")
+text = "Options
+"
+
+[node name="ButtonQuit" type="Button" parent="ColorRect/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_bbmxg")
+text = "Quit
+"
+
+[connection signal="pressed" from="ColorRect/GridContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
