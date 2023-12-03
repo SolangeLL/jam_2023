@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://j2plbavspgga"]
+[gd_scene load_steps=23 format=3 uid="uid://j2plbavspgga"]
 
 [ext_resource type="PackedScene" uid="uid://csv0hk1c0vy8v" path="res://scenes/pause_menu.tscn" id="1_feec3"]
 [ext_resource type="PackedScene" uid="uid://i8jlxvskds0a" path="res://maps/lvl1.tscn" id="1_jrclq"]
@@ -11,9 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://cpg2lygi07y4t" path="res://scenes/plante_cul.tscn" id="9_vwk3g"]
 [ext_resource type="PackedScene" uid="uid://r7sj1arqxooi" path="res://scenes/big_blob.tscn" id="10_1w7gf"]
 [ext_resource type="PackedScene" uid="uid://ci5yu6rsf56xy" path="res://scenes/blob.tscn" id="10_clksv"]
+[ext_resource type="PackedScene" uid="uid://bl7hdjfrer3be" path="res://scenes/tacos.tscn" id="12_qkfqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50o3l"]
 size = Vector2(1405, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8y4u"]
+size = Vector2(69, 659)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_algwj"]
 size = Vector2(539, 14)
@@ -45,10 +49,10 @@ size = Vector2(73, 11)
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -56.0
-offset_top = 372.0
-offset_right = -56.0
-offset_bottom = 372.0
+offset_left = -230.0
+offset_top = 355.0
+offset_right = -230.0
+offset_bottom = 355.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -76,6 +80,9 @@ position = Vector2(397, 400)
 
 [node name="FallingSpike3" parent="Traps" instance=ExtResource("3_jhs4d")]
 position = Vector2(945, 430)
+
+[node name="FallingSpike5" parent="Traps" instance=ExtResource("3_jhs4d")]
+position = Vector2(1035, 60)
 
 [node name="Spike5" parent="Traps" instance=ExtResource("2_yhb4k")]
 position = Vector2(1086, 584)
@@ -133,6 +140,12 @@ position = Vector2(820, 531)
 [node name="Coin12" parent="Coins" instance=ExtResource("5_yhdnf")]
 position = Vector2(387, 119)
 
+[node name="Coin13" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(747, 155)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(517, 241)
+
 [node name="Coin3" parent="Coins" instance=ExtResource("5_yhdnf")]
 position = Vector2(400, 477)
 
@@ -177,6 +190,21 @@ position = Vector2(692.5, 57)
 shape = SubResource("RectangleShape2D_50o3l")
 debug_color = Color(0.945098, 0.192157, 0, 0.419608)
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(687, -738)
+shape = SubResource("RectangleShape2D_50o3l")
+debug_color = Color(0.945098, 0.192157, 0, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(17.5, -339.5)
+shape = SubResource("RectangleShape2D_s8y4u")
+debug_color = Color(0.933382, 0.247585, 0.192842, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(1243, -338)
+shape = SubResource("RectangleShape2D_s8y4u")
+debug_color = Color(0.933382, 0.247585, 0.192842, 0.42)
+
 [node name="GrassType" type="Area2D" parent="." groups=["grass"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassType"]
@@ -191,6 +219,9 @@ debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
 
 [node name="FlyingBlob2" parent="." instance=ExtResource("6_ojccx")]
 position = Vector2(899, 430)
+
+[node name="FlyingBlob4" parent="." instance=ExtResource("6_ojccx")]
+position = Vector2(807, 153)
 
 [node name="FlyingBlob3" parent="." instance=ExtResource("6_ojccx")]
 position = Vector2(364, 166)
@@ -240,5 +271,8 @@ shape = SubResource("RectangleShape2D_rstdk")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="WoodType"]
 position = Vector2(539.5, 253.5)
 shape = SubResource("RectangleShape2D_a51tn")
+
+[node name="Tacos" parent="." instance=ExtResource("12_qkfqs")]
+position = Vector2(1046, 150)
 
 [connection signal="body_entered" from="DeathZone" to="Traps/Spike" method="_on_death_zone_body_entered"]
