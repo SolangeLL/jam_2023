@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var SPEED = 100.0
 @export var coins = 0
+var nb_deaths = 10
 var can_move = true
 var on_ground = true
 var is_moving = false
@@ -40,7 +41,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		on_ground = false
 		current_ground_type = ""
-		walk_sound.stream = load(current_ground_type)
+		walk_sound.stop()
 	
 	check_is_landing()
 
@@ -109,12 +110,14 @@ func die():
 	death_sound.play()
 	walk_sound.stop()
 	can_move = false
+	nb_deaths += 1
+	$Camera2D/HUD.update_death_text(nb_deaths)
 	pass
 
 func respawn():
 	$AnimatedSprite2D.play("idle")
-	var respawn = get_parent().find_child("Respawn")
-	global_position = respawn.global_position
+	var respawn_node = get_parent().find_child("Respawn")
+	global_position = respawn_node.global_position
 	can_move = true
 
 func _on_animated_sprite_2d_animation_finished():
@@ -129,4 +132,7 @@ func _on_animated_sprite_2d_animation_finished():
 
 	if $AnimatedSprite2D.animation == "death":
 		respawn()
-	pass # Replace with function body.
+
+func add_coin():
+	coins += 1
+	$Camera2D/HUD.update_coins_text(coins)

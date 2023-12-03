@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dc1gbsewpxod" path="res://scenes/falling_spike.tscn" id="3_jhs4d"]
 [ext_resource type="PackedScene" uid="uid://g7gwbvr4wxl7" path="res://scenes/Player.tscn" id="4_erhtk"]
 [ext_resource type="PackedScene" uid="uid://lxj3rwib25p8" path="res://scenes/coin.tscn" id="5_yhdnf"]
-[ext_resource type="PackedScene" path="res://scenes/flying_blob.tscn" id="6_ojccx"]
+[ext_resource type="PackedScene" uid="uid://hrvp5bmo4plk" path="res://scenes/flying_blob.tscn" id="6_ojccx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50o3l"]
 size = Vector2(1405, 134)
