@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://j2plbavspgga"]
+[gd_scene load_steps=10 format=3 uid="uid://j2plbavspgga"]
 
 [ext_resource type="PackedScene" uid="uid://i8jlxvskds0a" path="res://maps/lvl1.tscn" id="1_jrclq"]
 [ext_resource type="PackedScene" uid="uid://bgl3wdvx1o03j" path="res://scenes/spike.tscn" id="2_yhb4k"]
@@ -10,36 +10,55 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50o3l"]
 size = Vector2(1405, 134)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_algwj"]
+size = Vector2(539, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfl60"]
+size = Vector2(179.5, 12.5)
+
 [node name="World" type="Node2D"]
 
 [node name="first_lvl" parent="." instance=ExtResource("1_jrclq")]
 
-[node name="Spike" parent="." instance=ExtResource("2_yhb4k")]
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Spike" parent="Traps" instance=ExtResource("2_yhb4k")]
 position = Vector2(497, 584)
 
-[node name="FallingSpike" parent="." instance=ExtResource("3_jhs4d")]
+[node name="FallingSpike" parent="Traps" instance=ExtResource("3_jhs4d")]
 position = Vector2(377, 504)
 
-[node name="Spike2" parent="." instance=ExtResource("2_yhb4k")]
+[node name="Spike2" parent="Traps" instance=ExtResource("2_yhb4k")]
 position = Vector2(1059, 584)
 
-[node name="Spike3" parent="." instance=ExtResource("2_yhb4k")]
+[node name="Spike3" parent="Traps" instance=ExtResource("2_yhb4k")]
 position = Vector2(1102, 584)
 
-[node name="Spike4" parent="." instance=ExtResource("2_yhb4k")]
+[node name="Spike4" parent="Traps" instance=ExtResource("2_yhb4k")]
 position = Vector2(1122, 584)
 
-[node name="FallingSpike2" parent="." instance=ExtResource("3_jhs4d")]
+[node name="FallingSpike2" parent="Traps" instance=ExtResource("3_jhs4d")]
 position = Vector2(397, 400)
 
-[node name="FallingSpike3" parent="." instance=ExtResource("3_jhs4d")]
+[node name="FallingSpike3" parent="Traps" instance=ExtResource("3_jhs4d")]
 position = Vector2(945, 430)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(710, 585)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(820, 531)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(400, 477)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("5_yhdnf")]
+position = Vector2(376, 532)
 
 [node name="Respawn" type="Marker2D" parent="."]
 position = Vector2(52, 404)
-
-[node name="Coin" parent="." instance=ExtResource("5_yhdnf")]
-position = Vector2(710, 585)
 
 [node name="Player" parent="." instance=ExtResource("4_erhtk")]
 position = Vector2(93, 499)
@@ -54,13 +73,17 @@ shape = SubResource("RectangleShape2D_50o3l")
 [node name="FlyingBlob" parent="." instance=ExtResource("6_ojccx")]
 position = Vector2(985, 529)
 
-[node name="Coin2" parent="." instance=ExtResource("5_yhdnf")]
-position = Vector2(820, 531)
+[node name="GrassType" type="Area2D" parent="."]
+position = Vector2(3, 586)
 
-[node name="Coin3" parent="." instance=ExtResource("5_yhdnf")]
-position = Vector2(400, 477)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassType"]
+position = Vector2(264.5, 14)
+shape = SubResource("RectangleShape2D_algwj")
+debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
 
-[node name="Coin4" parent="." instance=ExtResource("5_yhdnf")]
-position = Vector2(376, 532)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GrassType"]
+position = Vector2(698.25, 14.75)
+shape = SubResource("RectangleShape2D_lfl60")
+debug_color = Color(0.788235, 0.196078, 0.933333, 0.419608)
 
-[connection signal="body_entered" from="DeathZone" to="Spike" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="DeathZone" to="Traps/Spike" method="_on_death_zone_body_entered"]
