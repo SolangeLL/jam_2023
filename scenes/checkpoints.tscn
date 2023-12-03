@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://blaaewtk1oe03"]
+
+[ext_resource type="Script" path="res://scripts/checkpoints.gd" id="1_5q5cc"]
+[ext_resource type="AudioStream" uid="uid://dp3koj1gkcjhp" path="res://assets/sounds/win_checkpoint.ogg" id="2_wokwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4tvy"]
+size = Vector2(16, 32)
+
+[node name="Checkpoint" type="Area2D"]
+script = ExtResource("1_5q5cc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l4tvy")
+debug_color = Color(0.854902, 0.909804, 0, 0.419608)
+
+[node name="ReachCheckpointSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wokwb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

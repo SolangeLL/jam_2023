@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://g7gwbvr4wxl7"]
+[gd_scene load_steps=53 format=3 uid="uid://g7gwbvr4wxl7"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_hlct5"]
 [ext_resource type="Texture2D" uid="uid://c0tupqufka5w1" path="res://assets/sprites/player/death/Hobbit - death1.png" id="2_6vp3l"]
 [ext_resource type="Texture2D" uid="uid://b1jocdk3bewf8" path="res://assets/sprites/player/death/Hobbit - death2.png" id="3_aaf1k"]
+[ext_resource type="AudioStream" uid="uid://cx6eb6ckbeik" path="res://assets/sounds/death.ogg" id="4_1l1p0"]
 [ext_resource type="Texture2D" uid="uid://dln8lmqtns67u" path="res://assets/sprites/player/death/Hobbit - death3.png" id="4_d6r18"]
 [ext_resource type="Texture2D" uid="uid://7x5y5xmruid" path="res://assets/sprites/player/death/Hobbit - death4.png" id="5_nigq4"]
 [ext_resource type="Texture2D" uid="uid://7gbfkq10sbui" path="res://assets/sprites/player/death/Hobbit - death5.png" id="6_otv55"]
@@ -45,6 +46,9 @@
 [ext_resource type="Texture2D" uid="uid://c0qcpw25ffiyb" path="res://assets/sprites/player/stop/Hobbit - stop6.png" id="43_dunvq"]
 [ext_resource type="Texture2D" uid="uid://chaejef1objkh" path="res://assets/sprites/player/stop/Hobbit - stop7.png" id="44_txref"]
 [ext_resource type="Texture2D" uid="uid://8delp35lbgb7" path="res://assets/sprites/player/stop/Hobbit - stop8.png" id="45_jkgl6"]
+[ext_resource type="AudioStream" uid="uid://crngdtq73tmyq" path="res://assets/sounds/jump.ogg" id="46_38a3b"]
+[ext_resource type="AudioStream" uid="uid://nl1e3bae4lbu" path="res://assets/sounds/jumpland.ogg" id="47_r4jl1"]
+[ext_resource type="PackedScene" uid="uid://bxjvg4pajqh37" path="res://scenes/HUD.tscn" id="49_5u4j7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ixpiw"]
 animations = [{
@@ -207,10 +211,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tavwq"]
-size = Vector2(15, 14)
+size = Vector2(15, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lak7e"]
+size = Vector2(13, 3)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_hlct5")
+
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("46_38a3b")
+volume_db = -5.0
+
+[node name="LandingSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("47_r4jl1")
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("4_1l1p0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -219,13 +240,22 @@ sprite_frames = SubResource("SpriteFrames_ixpiw")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, -1)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_tavwq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 texture_filter = 1
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
+position_smoothing_speed = 3.0
+
+[node name="HUD" parent="Camera2D" instance=ExtResource("49_5u4j7")]
+
+[node name="DetectTypeZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectTypeZone"]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_lak7e")
+debug_color = Color(0.819608, 0.403922, 0.00784314, 0.419608)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
