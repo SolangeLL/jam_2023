@@ -1,6 +1,13 @@
 extends Area2D
 
-var is_reached = false
+var is_reached = true
+
+func activate_checkpoint():
+	is_reached = false
+	print("point activé test")
+
+func desactivate_checkpoint():
+	is_reached = true
 
 func _on_body_entered(body : Node):
 	if body.is_in_group("player") and not is_reached:

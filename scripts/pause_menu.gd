@@ -4,6 +4,7 @@ extends Control
 @onready var options_menu = $Options
 @onready var audio_menu = $Audio
 @onready var video_menu = $Video
+@onready var checkpoints = $"../Checkpoints"
 
 var _is_paused:bool = false: set = set_paused
 
@@ -88,3 +89,20 @@ func _on_music_value_changed(value):
 
 func volume(bus_index, value):
 	AudioServer.set_bus_volume_db(bus_index, value)
+
+func on_checkpoints_in_scene():
+	for checkpoint in checkpoints.get_children():
+		checkpoint.activate_checkpoint()
+
+func off_checkpoints_in_scene():
+	for checkpoint in checkpoints.get_children():
+		checkpoint.desactivate_checkpoint()
+		
+
+func _on_check_button_toggled(button_pressed):
+	if button_pressed:
+		on_checkpoints_in_scene()
+		
+	else:
+		off_checkpoints_in_scene()
+		
